@@ -1,6 +1,17 @@
 local appMod = { "ctrl", "cmd" }
 
 hs.hotkey.bind(appMod, "0", function()
+	local finder = hs.application.get("Finder")
+
+	if finder then
+		for _, window in ipairs(finder:allWindows()) do
+			if window:isStandard() then
+				hs.application.launchOrFocus("Finder")
+				return
+			end
+		end
+	end
+
 	hs.execute('open "$HOME/Desktop"')
 end)
 
