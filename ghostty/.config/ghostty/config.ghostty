@@ -2,3 +2,8 @@ font-size = 16
 background = #141414
 maximize = true
 mouse-hide-while-typing = true
+
+# Disable ligatures
+font-feature = -dlig
+font-feature = -liga
+font-feature = -calt
